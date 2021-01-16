@@ -1,12 +1,16 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import Home from './Home';
+import ContactUs from './ContactUs';
 
 const App = () => {
-    const title = 'React!';
-
     return (
-        <div>
-            Hello {title}
-        </div>
+        <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/contact-us" component={ContactUs} />
+        </Switch>
+
     );
 };
 
