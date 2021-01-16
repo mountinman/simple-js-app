@@ -1,8 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './Home';
-import ContactUs from './ContactUs';
+import Home from './components/Home/Home';
+import ContactUs from './components/ContactUs/ContactUs';
+
+import './normalize.css';
 
 const App = () => {
     return (
