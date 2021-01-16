@@ -5,7 +5,7 @@ const Home = () => {
     const title = 'Home page';
 
     return (
-        <div>
+        <div className="home-page-container">
             <Navigation />
             Hello {title}
         </div>
