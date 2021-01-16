@@ -9,6 +9,7 @@ const ContactUs = () => {
     return (
         <div className="contact-us-page-container">
             <Navigation />
+            <p>Bla</p>
             Hello {title}
         </div>
     );
