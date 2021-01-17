@@ -16,14 +16,11 @@ $tp-breakpoint-max: 991px;
         display: none;
 
         @media (max-width: $tp-breakpoint-max) {
-            bottom: 32px;
+            bottom: -7px;
             display: inline;
             margin-right: 20px;
-        }
-
-        @media (max-width: $sp-breakpoint-max) {
-            bottom: 16px;
-            left: 22px;
+            position: relative;
+            left: -24px;
         }
     }
 
@@ -89,37 +86,39 @@ $tp-breakpoint-max: 991px;
         text-decoration: none;
     }
 
-    .main-navigation {
-        display: flex;
-        margin: 0;
-        list-style: none;
-
-        @media (max-width: $tp-breakpoint-max) {
-            position: absolute;
-            top: 83px;
-            background-color: black;
-            padding: 30px;
-            display: none;
-            flex-direction: column;
-            right: 0;
-            left: 0;
-            align-items: center;
-            height: 100vh;
-
+    nav {
+        .main-navigation {
+            display: flex;
+            margin: 0;
+            list-style: none;
+    
+            @media (max-width: $tp-breakpoint-max) {
+                position: absolute;
+                top: 100px;
+                background-color: black;
+                padding: 30px;
+                display: none;
+                flex-direction: column;
+                right: 0;
+                left: 0;
+                align-items: center;
+                height: 100vh;
+    
+                li {
+                    margin-bottom: 20px;
+                }
+    
+                &.is-open {
+                    display: flex;
+                }
+            }
+    
             li {
-                margin-bottom: 20px;
-            }
-
-            &.is-open {
-                display: flex;
-            }
-        }
-
-        li {
-            margin-right: 20px;
-            a {
-                color:$text-light-gray;
-                text-decoration: none;
+                margin-right: 20px;
+                a {
+                    color:$text-light-gray;
+                    text-decoration: none;
+                }
             }
         }
     }
