@@ -1,0 +1,126 @@
+$main-color: brown;
+$text-light-gray: rgb(235, 235, 235);
+
+$sp-breakpoint-max: 767px;
+$tp-breakpoint-max: 991px;
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    background-color: $main-color;
+    text-transform: uppercase;
+    align-items: center;
+
+    .mobile-menu-icon {
+        display: none;
+
+        @media (max-width: $tp-breakpoint-max) {
+            bottom: 32px;
+            display: inline;
+            margin-right: 20px;
+        }
+
+        @media (max-width: $sp-breakpoint-max) {
+            bottom: 16px;
+            left: 22px;
+        }
+    }
+
+    .hamburger-menu {
+        transition: all .3s ease-in-out;
+    
+        .line {
+            background-color: #f8f7f6;
+            display: block;
+            height: 3px;
+            margin: 6px auto;
+            transition: all .3s ease-in-out;
+            width: 32px;
+    
+            @media (max-width: $sp-breakpoint-max) {
+                width: 27px;
+            }
+        }
+    
+        &.is-active {
+            animation: hamburger .6s forwards;
+    
+            .line {
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    transition-delay: .2s;
+                }
+    
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+    
+                &:nth-child(1) {
+                    transform: translateY(10px) rotate(45deg);
+                }
+    
+                &:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
+        }
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    @keyframes hamburger {
+        0%,
+        100% {
+            transform: scale(.7);
+        }
+    
+        50% {
+            transform: scale(0);
+        }
+    }
+    
+    .logo {
+        color:$text-light-gray;
+        padding: 0 20px;
+        text-decoration: none;
+    }
+
+    .main-navigation {
+        display: flex;
+        margin: 0;
+        list-style: none;
+
+        @media (max-width: $tp-breakpoint-max) {
+            position: absolute;
+            top: 83px;
+            background-color: black;
+            padding: 30px;
+            display: none;
+            flex-direction: column;
+            right: 0;
+            left: 0;
+            align-items: center;
+            height: 100vh;
+
+            li {
+                margin-bottom: 20px;
+            }
+
+            &.is-open {
+                display: flex;
+            }
+        }
+
+        li {
+            margin-right: 20px;
+            a {
+                color:$text-light-gray;
+                text-decoration: none;
+            }
+        }
+    }
+}

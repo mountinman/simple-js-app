@@ -1,14 +1,16 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
 
-const Home = () => {
-    const title = 'Home page';
+import './style.scss';
 
+const Home = () => {
     return (
-        <div className="home-page-container">
+        <>
             <Navigation />
-            Hello {title}
-        </div>
+            <div className="home-container">
+                Home
+            </div>
+        </>
     );
 };
 

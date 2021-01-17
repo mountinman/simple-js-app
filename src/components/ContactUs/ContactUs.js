@@ -4,14 +4,13 @@ import Navigation from '../Navigation/Navigation';
 import './style.scss';
 
 const ContactUs = () => {
-    const title = 'Contact page';
-
     return (
-        <div className="contact-us-page-container">
+        <>
             <Navigation />
-            <p>Bla</p>
-            Hello {title}
-        </div>
+            <div className="contact-us-container">
+                Contact Us
+            </div>
+        </>
     );
 };
 
