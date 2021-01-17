@@ -2,4 +2,56 @@
     height: 100vh;
     margin-top: 50px;
     text-align: center;
+
+    button {
+        cursor: pointer;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #a5292a;
+        color: white;
+
+        &.disabled {
+            cursor: not-allowed;
+            opacity: .3;
+        }
+    }
+
+    .success {
+        color: green;
+        font-weight: 700;
+    }
+
+    h1 {
+        padding: 20px;
+    }
+
+    .form-field {
+        max-width: 260px;
+        margin: 0 auto;
+        padding-bottom: 17px;
+
+        .error {
+            color: red;
+        }
+
+        .field-label {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        input {
+            width: 100%;
+            color: #656363;
+            padding: 7px;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            color: #656363;
+            padding: 7px;
+        }
+    }
 }
