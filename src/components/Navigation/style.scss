@@ -20,7 +20,6 @@ $tp-breakpoint-max: 991px;
             display: inline;
             margin-right: 20px;
             position: relative;
-            left: -24px;
         }
     }
 
@@ -41,8 +40,9 @@ $tp-breakpoint-max: 991px;
         }
     
         &.is-active {
+            outline: none;
             animation: hamburger .6s forwards;
-    
+
             .line {
                 &:nth-child(1),
                 &:nth-child(2),
@@ -87,6 +87,13 @@ $tp-breakpoint-max: 991px;
     }
 
     nav {
+        width: 231px;
+        margin-right: 10px;
+
+        @media (max-width: $tp-breakpoint-max) {
+            width: 89px;
+        }
+
         .main-navigation {
             display: flex;
             margin: 0;

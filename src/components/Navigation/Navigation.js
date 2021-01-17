@@ -6,10 +6,16 @@ import './style.scss';
 const Navigation = () => {
     const [isMobileNavOpen, setMobileNavState] = useState(false);
 
+    const onMobileMenuClick = (e) => {
+        if (e.key === 'Enter') {
+            setMobileNavState(!isMobileNavOpen);
+        }
+    };
+
     return (
         <div className="navigation-container" role="navigation">
             <a className="logo" href="/" role="button">Logo</a>
-            <nav>
+            <nav tabIndex={0} onKeyPress={(e) => onMobileMenuClick(e)}>
                 <div
                     className={`mobile-menu-icon hamburger-menu ${isMobileNavOpen ? 'is-active' : ''}`}
                     onClick={() => setMobileNavState(!isMobileNavOpen)}
