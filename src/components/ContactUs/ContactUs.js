@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import Form from './Form/Form';
 
+import { getServerData } from '../../adapters/api.adapter';
+
 import { getErrors } from '../../helpers/form.validate';
 import { validations } from '../../helpers/form.config';
 
@@ -13,7 +15,7 @@ const ContactUs = () => {
     const [fields, setFields] = useState({});
     const [errors, setErrors] = useState({});
     const [isDisabled, setDisabledState] = useState(true);
-    const [isSubmitted, setSubmittedState] = useState(false);
+    const [response, setResponse] = useState(false);
 
     const history = useHistory();
 
@@ -40,12 +42,12 @@ const ContactUs = () => {
         });
     };
 
-    const onSubmit = () => {
-        console.log('submitted');
-        setSubmittedState(true);
+    const onSubmit = async () => {
+        setResponse(await getServerData(JSON.stringify(fields)));
+
         setTimeout(() => {
             history.push('/');
-        }, 3500);
+        }, 4000);
     };
 
     return (
@@ -61,7 +63,7 @@ const ContactUs = () => {
                     errors={errors}
                     isDisabled={isDisabled}
                 />
-                {isSubmitted && <p className="success">MESSAGE SENT, you will be routed to home page!</p>}
+                {response.status === 200 && <p className="success">{response.data} You will be now routed to home page!</p>}
             </div>
         </>
     );
