@@ -10,8 +10,9 @@ export const getServerData = async (data) => {
         .then((response) => {
             return response;
         })
-        .catch((response) => {
-            console.log('err', response);
+        .catch((err) => {
+            console.log('err', err);
+            return 'error';
         });
 
     return res;

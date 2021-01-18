@@ -47,7 +47,7 @@ const ContactUs = () => {
 
         setTimeout(() => {
             history.push('/');
-        }, 4000);
+        }, 5000);
     };
 
     return (
@@ -63,7 +63,8 @@ const ContactUs = () => {
                     errors={errors}
                     isDisabled={isDisabled}
                 />
-                {response.status === 200 && <p className="success">{response.data} You will be now routed to home page!</p>}
+                {response.status === 200 && <p className="success">{response.data}</p>}
+                {response === 'error' && <p className="alert">Server is not running error! You will be redirected to home page!</p>}
             </div>
         </>
     );
