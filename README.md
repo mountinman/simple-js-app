@@ -1,5 +1,5 @@
 # simple-js-app
-Simple js app for job interview
+Simple js app
 
 ## Getting Started
 
